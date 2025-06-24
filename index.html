@@ -2,49 +2,70 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>SIPADU - Sistem Pemanen Air dari Udara</title>
+    <title>Selamat Datang di SIPADU</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/index.css">
-    <link rel="manifest" href="/html/manifest.json">
-    <meta name="theme-color" content="#00b4d8">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #00b4d8 0%, #48cae4 100%);
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+        }
+        .welcome-box {
+            background: rgba(0,0,0,0.2);
+            border-radius: 20px;
+            padding: 40px 32px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+            text-align: center;
+            animation: fadeIn 1.2s;
+        }
+        .welcome-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+        .welcome-desc {
+            font-size: 1.1rem;
+            margin-bottom: 24px;
+        }
+        .loader {
+            border: 5px solid #fff;
+            border-top: 5px solid #00b4d8;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 16px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+    <meta http-equiv="refresh" content="2.5;url=web/html/landing.html">
 </head>
 <body>
-    <div class="landing-bg"></div>
-    <div class="landing-container">
-        <div class="landing-header">
-            <img src="/assets/logo_unnes.png" alt="UNNES" class="landing-logo">
-            <img src="/assets/logo_tekkom.png" alt="Tekkom" class="landing-logo">
-        </div>
-        <h1 class="landing-title">SIPADU</h1>
-        <h2 class="landing-subtitle">Sistem Pemanen Air dari Udara</h2>
-        <p class="landing-desc">
-            SIPADU adalah sistem monitoring suhu & kelembapan udara berbasis IoT yang terintegrasi dengan web dan Telegram. 
-        </p>
-        <div class="landing-tabs">
-            <a href="/html/monitor.html" class="tab-link">Info Monitoring</a>
-            <a href="https://t.me/HumitechBot" class="tab-link" target="_blank">Link Telegram</a>
-            <a href="/html/about.html" class="tab-link">About Page</a>
-        </div>
-        <button id="toggle-dark" class="tab-link" style="position:absolute;top:18px;right:24px;padding:10px 20px;min-width:unset;width:auto;"><span id="dark-icon">🌙</span></button>
-        <footer class="landing-footer">
-            © 2024 SIPADU – Sistem Pemanen Air dari Udara
-        </footer>
+    <div class="welcome-box">
+        <div class="loader"></div>
+        <div class="welcome-title">Selamat Datang di SIPADU</div>
+        <div class="welcome-desc">Sistem Pemanen Air dari Udara<br>Anda akan diarahkan ke halaman utama...</div>
     </div>
     <script>
-    // Dark mode toggle
-    const darkBtn = document.getElementById('toggle-dark');
-    const darkIcon = document.getElementById('dark-icon');
-    function setDarkMode(on) {
-      document.body.classList.toggle('dark-mode', on);
-      localStorage.setItem('sipadu-dark', on);
-      darkIcon.textContent = on ? '☀️' : '🌙';
-    }
-    darkBtn.addEventListener('click', function() {
-      setDarkMode(!document.body.classList.contains('dark-mode'));
-    });
-    // On load, set dark mode if saved
-    setDarkMode(localStorage.getItem('sipadu-dark') === 'true');
+      setTimeout(function() {
+        window.location.href = 'web/html/landing.html';
+      }, 2500);
     </script>
 </body>
 </html>
