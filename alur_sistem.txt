@@ -1,0 +1,31 @@
+# Alur Sistem Kerja SIPADU (Sistem Pemanen Air dari Udara)
+
+1. **Pembacaan Data oleh Sensor**
+   - Sensor DHT22 yang terpasang pada ESP32 membaca suhu dan kelembapan udara secara periodik.
+
+2. **Pengiriman Data ke Server**
+   - ESP32 mengirimkan data suhu dan kelembapan ke server Flask melalui jaringan WiFi lokal menggunakan HTTP POST ke endpoint `/update`.
+
+3. **Penyimpanan Data di Server**
+   - Server Flask menerima data dari ESP32 dan menyimpannya sebagai data terbaru di variabel penyimpanan sementara.
+
+4. **Penyediaan API untuk Monitoring**
+   - Server Flask menyediakan endpoint `/data` yang dapat diakses oleh aplikasi web dan bot Telegram untuk mengambil data suhu dan kelembapan terbaru dalam format JSON.
+
+5. **Monitoring Melalui Web**
+   - Pengguna membuka halaman web monitoring (monitor.html) melalui browser di komputer atau HP.
+   - Halaman web secara otomatis mengambil data terbaru dari server Flask setiap beberapa detik dan menampilkan suhu, kelembapan, serta grafik riwayat data secara real-time.
+
+6. **Monitoring Melalui Telegram**
+   - Pengguna mengirim perintah seperti `/start`, `/humidity`, atau `/temperature` ke bot Telegram SIPADU.
+   - Script polling Telegram (`telegram_polling.py`) secara berkala memeriksa perintah baru dari pengguna.
+   - Jika ada perintah, script polling mengambil data terbaru dari server Flask dan mengirimkan balasan ke Telegram sesuai permintaan pengguna.
+
+7. **Akses Multi-Platform**
+   - Sistem dapat diakses dari berbagai perangkat (komputer, HP, tablet) selama terhubung ke jaringan yang sama dengan server Flask.
+   - Monitoring juga dapat dilakukan dari mana saja melalui aplikasi Telegram.
+
+---
+
+**Kesimpulan:**
+SIPADU mengintegrasikan sensor, mikrokontroler, server, web, dan Telegram untuk memberikan solusi monitoring suhu & kelembapan udara yang mudah, real-time, dan fleksibel. 

@@ -1,0 +1,240 @@
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    background: #e0eafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+body.dark-mode, .dark-mode .landing-bg {
+    background: linear-gradient(135deg, #232946 0%, #16161a 100%) !important;
+}
+.landing-bg {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    z-index: 0;
+    overflow: hidden;
+}
+/* Particles Animation */
+.landing-bg::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('https://www.transparenttextures.com/patterns/cubes.png');
+    opacity: 0.08;
+    z-index: 1;
+    pointer-events: none;
+    animation: moveBg 18s linear infinite;
+}
+@keyframes moveBg {
+    0% { background-position: 0 0; }
+    100% { background-position: 200px 200px; }
+}
+.landing-container {
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 32px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18), 0 1.5px 8px 0 rgba(0,0,0,0.08);
+    padding: 44px 36px 36px 36px;
+    max-width: 440px;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    animation: fadeIn 1.2s cubic-bezier(.39,.575,.56,1.000);
+    border: 1.5px solid rgba(0, 183, 255, 0.13);
+    backdrop-filter: blur(8px) saturate(1.2);
+}
+.dark-mode .landing-container {
+    background: rgba(34, 39, 70, 0.92) !important;
+    color: #f4f4f4;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.28);
+    border: 1.5px solid #0096c7;
+    backdrop-filter: blur(8px) saturate(1.2);
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(40px) scale(0.98);}
+    to { opacity: 1; transform: translateY(0) scale(1);}
+}
+.landing-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 10px;
+}
+.landing-logo {
+    height: 48px;
+    width: auto;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    border: 1.5px solid #e0eafc;
+    transition: transform 0.2s;
+}
+.landing-logo:hover {
+    transform: scale(1.08) rotate(-3deg);
+}
+.landing-title {
+    color: #0077b6;
+    font-size: 2.5rem;
+    margin: 10px 0 0 0;
+    letter-spacing: 2.5px;
+    font-weight: 800;
+    text-shadow: 0 2px 8px rgba(0,183,255,0.08);
+}
+.dark-mode .landing-title {
+    color: #8be9fd !important;
+}
+.landing-subtitle {
+    color: #0096c7;
+    font-size: 1.18rem;
+    margin: 8px 0 18px 0;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+.dark-mode .landing-subtitle {
+    color: #8be9fd !important;
+}
+.landing-desc {
+    color: #444;
+    font-size: 1.08rem;
+    margin-bottom: 22px;
+    line-height: 1.6;
+}
+.dark-mode .landing-desc {
+    color: #8be9fd !important;
+}
+.landing-features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 28px;
+}
+.feature-card {
+    background: #f0f4f8;
+    border-radius: 12px;
+    padding: 12px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 90px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: transform 0.2s;
+}
+.feature-card:hover {
+    transform: scale(1.07);
+}
+.feature-icon {
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+}
+.feature-title {
+    font-size: 0.98rem;
+    color: #0077b6;
+    font-weight: 500;
+}
+.landing-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 32px;
+    background: linear-gradient(90deg, #00b4d8 0%, #48cae4 100%);
+    color: #fff;
+    border-radius: 24px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: background 0.2s, transform 0.2s;
+}
+.landing-btn:hover {
+    background: linear-gradient(90deg, #0096c7 0%, #00b4d8 100%);
+    transform: translateY(-2px) scale(1.04);
+}
+.landing-footer {
+    margin-top: 28px;
+    color: #aaa;
+    font-size: 0.97rem;
+    letter-spacing: 0.2px;
+    border-top: 1px solid #e0eafc;
+    padding-top: 12px;
+    opacity: 0.85;
+}
+.dark-mode .landing-footer {
+    color: #aaa;
+    border-top: 1px solid #0096c7;
+}
+.landing-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin: 28px 0 24px 0;
+}
+.tab-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: pre-line;
+    padding: 15px 36px;
+    background: linear-gradient(90deg, #00b4d8 0%, #48cae4 100%);
+    color: #fff;
+    border-radius: 20px;
+    font-size: 1.13rem;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 2px 12px rgba(0,183,255,0.10);
+    border: 1.5px solid #e0eafc;
+    transition: background 0.22s, transform 0.22s, box-shadow 0.22s;
+    position: relative;
+    overflow: hidden;
+}
+.dark-mode .tab-link {
+    background: linear-gradient(90deg, #232946 0%, #0096c7 100%) !important;
+    color: #fff !important;
+    border: 1.5px solid #0096c7;
+}
+.tab-link::after {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background: linear-gradient(120deg, #00b4d8 0%, #48cae4 100%);
+    opacity: 0;
+    transition: opacity 0.22s;
+    z-index: 0;
+}
+.tab-link:hover {
+    background: linear-gradient(90deg, #0096c7 0%, #00b4d8 100%);
+    transform: translateY(-2px) scale(1.06);
+    box-shadow: 0 4px 18px rgba(0,183,255,0.16);
+}
+.dark-mode .tab-link:hover {
+    background: linear-gradient(90deg, #0096c7 0%, #232946 100%) !important;
+}
+.tab-link:hover::after {
+    opacity: 0.08;
+}
+@media (max-width: 900px) {
+    .landing-container { padding: 18px 2vw; max-width: 98vw; }
+    .landing-header { gap: 10px; }
+    .landing-logo { height: 38px; }
+    .landing-title { font-size: 1.5rem; }
+    .landing-tabs { gap: 10px; }
+    .tab-link { font-size: 1rem; padding: 12px 0; min-width: 120px; }
+}
+@media (max-width: 600px) {
+    .landing-container { padding: 8px 1vw; max-width: 99vw; }
+    .landing-header { gap: 6px; }
+    .landing-logo { height: 28px; }
+    .landing-title { font-size: 1.1rem; }
+    .landing-tabs { flex-direction: row; gap: 8px; flex-wrap: wrap; }
+    .tab-link { min-width: 0; flex: 1 1 0; width: auto; font-size: 0.98rem; padding: 12px 0; }
+}
+.landing-title { font-size: 2.3rem; }
+.landing-subtitle { font-size: 1.15rem; }
+.landing-desc { font-size: 1.05rem; }
+.tab-link { font-size: 1.08rem; }

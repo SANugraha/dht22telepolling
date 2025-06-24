@@ -1,0 +1,20 @@
+{
+  "name": "SIPADU Monitoring",
+  "short_name": "SIPADU",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#e0eafc",
+  "theme_color": "#00b4d8",
+  "icons": [
+    {
+      "src": "/assets/logo_unnes.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/logo_unnes.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+} 

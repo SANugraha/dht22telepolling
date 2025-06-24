@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>SIPADU - Sistem Pemanen Air dari Udara</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/landing.css">
+    <link rel="manifest" href="/html/manifest.json">
+    <meta name="theme-color" content="#00b4d8">
+</head>
+<body>
+    <div class="landing-bg"></div>
+    <div class="landing-container">
+        <div class="landing-header">
+            <img src="/assets/logo_unnes.png" alt="UNNES" class="landing-logo">
+            <img src="/assets/logo_tekkom.png" alt="Tekkom" class="landing-logo">
+        </div>
+        <h1 class="landing-title">SIPADU</h1>
+        <h2 class="landing-subtitle">Sistem Pemanen Air dari Udara</h2>
+        <p class="landing-desc">
+            SIPADU adalah sistem monitoring suhu & kelembapan udara berbasis IoT yang terintegrasi dengan web dan Telegram. 
+        </p>
+        <div class="landing-tabs">
+            <a href="/html/monitor.html" class="tab-link">Info Monitoring</a>
+            <a href="https://t.me/HumitechBot" class="tab-link" target="_blank">Link Telegram</a>
+            <a href="/html/about.html" class="tab-link">About Page</a>
+        </div>
+        <button id="toggle-dark" class="tab-link" style="position:absolute;top:18px;right:24px;padding:10px 20px;min-width:unset;width:auto;"><span id="dark-icon">🌙</span></button>
+        <footer class="landing-footer">
+            © 2024 SIPADU – Sistem Pemanen Air dari Udara
+        </footer>
+    </div>
+    <script>
+    // Dark mode toggle
+    const darkBtn = document.getElementById('toggle-dark');
+    const darkIcon = document.getElementById('dark-icon');
+    function setDarkMode(on) {
+      document.body.classList.toggle('dark-mode', on);
+      localStorage.setItem('sipadu-dark', on);
+      darkIcon.textContent = on ? '☀️' : '🌙';
+    }
+    darkBtn.addEventListener('click', function() {
+      setDarkMode(!document.body.classList.contains('dark-mode'));
+    });
+    // On load, set dark mode if saved
+    setDarkMode(localStorage.getItem('sipadu-dark') === 'true');
+    </script>
+</body>
+</html>

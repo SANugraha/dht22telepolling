@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>About SIPADU</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/about.css">
+</head>
+<body>
+    <div class="landing-bg"></div>
+    <div class="about-container">
+        <a href="/html/landing.html" class="about-back-btn">&larr; Kembali</a>
+        <button id="toggle-dark" class="about-back-btn" style="right:24px;left:auto;top:18px;position:absolute;"><span id="dark-icon">🌙</span></button>
+        <div class="about-title">Tentang SIPADU</div>
+        <div class="about-section">
+            <h2 class="landing-subtitle">Pembimbing</h2>
+            <div class="team-grid" style="justify-content:center;grid-template-columns:1fr;max-width:340px;margin:0 auto;">
+                <div class="team-card team-card-dosen">
+                    <div class="team-photo"><img src="/assets/foto_pembimbing.jpg" alt="Syahroni Hidayat" style="width:100%;height:100%;border-radius:50%;"></div>
+                    <div class="team-name">Syahroni Hidayat, S.T., M.Eng.</div>
+                    <div class="team-role">Pembimbing<br>NIP: 198801072022031004</div>
+                    <div class="team-desc">Dosen pembimbing yang mengarahkan, mengawasi, dan memberikan masukan dalam seluruh proses pengembangan sistem SIPADU.</div>
+                </div>
+            </div>
+        </div>
+        <div class="about-section">
+            <h2 class="landing-subtitle">Anggota Tim</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-photo"><img src="/assets/5312422001.jpg" alt="Fajar Dwi Kurniawan" style="width:100%;height:100%;border-radius:50%;"></div>
+                    <div class="team-name">Fajar Dwi Kurniawan</div>
+                    <div class="team-role">NIM: 5312422001</div>
+                    <div class="team-desc">Bertanggung jawab dalam proses perancangan, implementasi, dan optimasi metode fuzzy logic sebagai sistem kontrol utama pada perangkat dehumidifier, termasuk dalam menyusun aturan logika dan fungsi keanggotaan yang sesuai dengan parameter lingkungan.</div>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo"><img src="/assets/5312422010.jpg" alt="Nadya Dwi Zalsabila Usman" style="width:100%;height:100%;border-radius:50%;"></div>
+                    <div class="team-name">Nadya Dwi Zalsabila Usman</div>
+                    <div class="team-role">NIM: 5312422010</div>
+                    <div class="team-desc">Berperan dalam merancang keseluruhan sistem perangkat keras dehumidifier dan integrasi komponen, serta melakukan serangkaian pengujian dan evaluasi kinerja alat guna memastikan sistem berfungsi secara optimal.</div>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo"><img src="/assets/5312422040.jpg" alt="Saputra Adi Nugraha" style="width:100%;height:100%;border-radius:50%;"></div>
+                    <div class="team-name">Saputra Adi Nugraha</div>
+                    <div class="team-role">NIM: 5312422040</div>
+                    <div class="team-desc">Bertugas dalam pengembangan dan integrasi sistem monitoring berbasis Web Internet of Things (IoT) menggunakan ESP32 yang diintegrasikan dengan HTTP, serta melakukan analisis terhadap data pada air kondensasi, suhu, dan kelembaban menggunakan Machine Learning.</div>
+                </div>
+            </div>
+        </div>
+        <div class="about-section">
+            <h2 class="landing-subtitle">Tujuan Sistem SIPADU</h2>
+            <div class="about-desc">
+                Sistem ini dibuat untuk memantau suhu & kelembapan udara secara real-time, mendukung efisiensi pemanenan air dari udara, serta memberikan notifikasi otomatis kepada pengguna. Dengan adanya sistem ini, diharapkan proses pemanenan air dari udara menjadi lebih optimal, terukur, dan mudah dipantau dari mana saja.
+            </div>
+        </div>
+        <div class="about-section">
+            <h2 class="landing-subtitle">Dokumentasi Foto</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="/assets/dokumentasi1.jpg" class="gallery-img" alt="Desain 3D alat dehumidifier" loading="lazy">
+                    <div class="gallery-caption">Desain 3D alat dehumidifier</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/assets/dokumentasi2.jpg" class="gallery-img" alt="Tim pengembang SIPADU bersama alat" loading="lazy">
+                    <div class="gallery-caption">Tim pengembang SIPADU bersama alat</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/assets/dokumentasi3.jpg" class="gallery-img" alt="Tampilan web monitoring SIPADU" loading="lazy">
+                    <div class="gallery-caption">Tampilan bot monitoring SIPADU</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/assets/dokumentasi4.jpg" class="gallery-img" alt="Diagram wiring sistem Humitech" loading="lazy">
+                    <div class="gallery-caption">Diagram wiring sistem Humitech</div>
+                </div>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:32px; color:#aaa; font-size:0.98rem;">© 2024 SIPADU – Sistem Pemanen Air dari Udara</div>
+    </div>
+    <script>
+    // Dark mode toggle
+    const darkBtn = document.getElementById('toggle-dark');
+    const darkIcon = document.getElementById('dark-icon');
+    function setDarkMode(on) {
+      document.body.classList.toggle('dark-mode', on);
+      localStorage.setItem('sipadu-dark', on);
+      darkIcon.textContent = on ? '☀️' : '🌙';
+    }
+    darkBtn.addEventListener('click', function() {
+      setDarkMode(!document.body.classList.contains('dark-mode'));
+    });
+    // On load, set dark mode if saved
+    setDarkMode(localStorage.getItem('sipadu-dark') === 'true');
+    </script>
+</body>
+</html> 
