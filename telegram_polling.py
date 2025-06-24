@@ -21,6 +21,7 @@ def send_telegram_message(message, chat_id):
     requests.post(url, data=payload)
 
 def main():
+    print("Bot is running...")
     last_update_id = None
     while True:
         updates = get_updates(last_update_id)
