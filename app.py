@@ -3,8 +3,10 @@ from datetime import datetime
 from flask import Flask, request, jsonify, send_from_directory, send_file
 import requests
 import os
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 # Data terakhir dari sensor
 data_store = {"temperature": None, "humidity": None}
@@ -90,4 +92,4 @@ def html_files(filename):
     return send_from_directory('web/html', filename)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=8080)
