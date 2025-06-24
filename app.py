@@ -59,7 +59,7 @@ def export_data():
 
 @app.route('/')
 def index():
-    return send_from_directory('web/html', 'landing.html')
+    return send_from_directory('web/html', 'index.html')
 
 @app.route('/<path:filename>')
 def static_files(filename):
