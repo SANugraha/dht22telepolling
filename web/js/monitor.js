@@ -1,3 +1,4 @@
+const API_BASE_URL = 'https://dht22telepolling-production.up.railway.app';
 let chart;
 let tempData = [];
 let humData = [];
@@ -9,7 +10,7 @@ function isValidNumber(val) {
 
 async function fetchData() {
     try {
-        const response = await fetch('/data');
+        const response = await fetch(`${API_BASE_URL}/data`);
         if (!response.ok) throw new Error('Gagal mengambil data');
         const data = await response.json();
 
