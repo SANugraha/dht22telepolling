@@ -14,9 +14,9 @@ data_store = {"temperature": None, "humidity": None}
 def get_last_csv_row(filename):
     try:
         with open(filename, 'r', encoding='utf-8') as f:
-            lines = [line.strip() for line in f if line.strip()]  # hanya baris yang tidak kosong
+            lines = f.readlines()
             if len(lines) > 1:
-                return lines[-1].split(';')
+                return lines[-1].strip().split(';')
     except Exception:
         pass
     return None
@@ -53,23 +53,7 @@ def update_data():
 
 @app.route('/data', methods=['GET'])
 def get_data():
-    print("data_store:", data_store)
-    last_row = get_last_csv_row('data_log.csv')
-    print("last_row:", last_row)
-    # Jika data_store sudah ada data, pakai itu
-    if data_store["temperature"] is not None and data_store["humidity"] is not None:
-        return jsonify(data_store)
-    # Jika belum, coba baca data terakhir dari data_log.csv
-    if last_row:
-        # last_row: [timestamp, Waktu, Kelembapan, Suhu]
-        try:
-            humidity = float(last_row[2])
-            temperature = float(last_row[3])
-            return jsonify({"temperature": temperature, "humidity": humidity})
-        except Exception:
-            pass
-    # Jika tetap gagal, return null
-    return jsonify({"temperature": None, "humidity": None})
+    return jsonify(data_store)
 
 @app.route('/export')
 def export_data():
