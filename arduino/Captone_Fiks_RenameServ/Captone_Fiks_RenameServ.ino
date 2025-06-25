@@ -6,8 +6,8 @@
 #define DHTTYPE DHT22
 DHT dht(DHTPIN, DHTTYPE);
 
-const char* ssid = "SAN"; //ssid wif
-const char* password = "tanyambahdarmi"; //pss wifi
+const char* ssid = "hotspot"; //ssid wif
+const char* password = "mintahotspot"; //pss wifi
 const char* serverUrl = "https://dht22telepolling-production.up.railway.app/update"; //ganti server flasknya
 
 void setup() {
