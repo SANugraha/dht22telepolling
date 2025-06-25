@@ -8,7 +8,7 @@ DHT dht(DHTPIN, DHTTYPE);
 
 const char* ssid = "realmec35"; //ssid wifi
 const char* password = "awawa1010"; //pss wifi
-const char* serverUrl = "https://dht22telepolling-production.up.railway.app/update"; //ganti server flasknya
+const char* serverUrl = "  https://dht22telepolling-production.up.railway.app/update"; //ganti server flasknya
 
 void setup() {
     Serial.begin(115200);
